@@ -290,9 +290,9 @@
     for (var i = 0; i < scenarios.length; i++) {
       var answer = answers[i];
       if (answer === "E") {
-        eCount++;
+        eCount = eCount+1;
       } else if (answer === "I") {
-        iCount++;
+        iCount = iCount+1;
       }
     }
     result += eCount > iCount ? "E" : "I";
@@ -303,9 +303,9 @@
     for (var i = 0; i < scenarios.length; i++) {
       var answer = answers[i];
       if (answer === "S") {
-        sCount++;
+        sCount = sCount+1;
       } else if (answer === "N") {
-        nCount++;
+        nCount = nCount+1;
       }
     }
     result += sCount > nCount ? "S" : "N";
@@ -316,9 +316,9 @@
     for (var i = 0; i < scenarios.length; i++) {
       var answer = answers[i];
       if (answer === "T") {
-        tCount++;
+        tCount = tCount+1;
       } else if (answer === "F") {
-        fCount++;
+        fCount = fCount+1;
       }
     }
     result += tCount > fCount ? "T" : "F";
@@ -329,49 +329,55 @@
     for (var i = 0; i < scenarios.length; i++) {
       var answer = answers[i];
       if (answer === "J") {
-        jCount++;
+        jCount = jCount+1;
       } else if (answer === "P") {
-        pCount++;
+        pCount = pCount+1;
       }
     }
-    result += jCount > pCount ? "J" : "P";
+    result += jCount > pCount ? "J" : "P" 
   
     // 建立 MBTI 類型與動物名稱的對應表
     var animalNames = {
-        ESP: "外向感知者",
-        ISP: "內向感知者",
-        ENP: "外向直覺者",
-        INP: "內向直覺者",
-        ESJ: "外向感覺型",
-        ISJ: "內向感覺型",
-        ETJ: "外向思考型",
-        ITJ: "內向思考型",
-        EFJ: "外向情感型",
-        IFJ: "內向情感型",
+        ENTJ: "01",
+        ENTP: "02",
+        ENFJ: "03",
+        ENFP: "04",
+        INTJ: "05",
+        INTP: "06",
+        INFJ: "07",
+        INFP: "08",
+        ESTJ: "09",
+        ESTP: "10",
+        ESFJ: "11",
+        ESFP: "12",
+        ISTJ: "13",
+        ISTP: "14",
+        ISFJ: "15",
+        ISFP: "16"
     };
   
     // 建立動物名稱與描述的對應表
     var animalDescriptions = {
         外向感知者:
-        "森林中的領導者，擅長用規範和經驗渲染他人，相當具有領導風範的類型。然而，他們的執著和硬派的管理風格有時會給身邊人帶來壓力。",
+        "",
         內向感知者:
-        "機智靈活的探索者，擅長思考問題的各種可能性，喜歡挑戰常規。像狐狸一樣狡猾聰明，但有時也會因為好奇心而迷失方向。",
+        "",
         外向直覺者:
-        "充滿魅力和社交能力的孔雀，在人群中引人注目，善於建立和諧和支持他人。然而，他們有時也會在過於關注他人的需求時忽略了自己。",
+        "",
         內向直覺者:
-        "自由奔放的蝴蝶，充滿熱情和創造力。他們喜歡追求夢想，帶給周圍人活力和喜悅，但有時也容易感到不安定和難以捉摸。",
+        "",
         外向感覺型:
-        "神秘而獨立的獨角獸，擅長分析和策劃，有著強大的洞察力和創新思維。他們在追求目標時常常非常堅定，但也因為內向而被認為神秘而難以理解。",
+        "",
         內向感覺型:
-        "智慧而冷靜的觀察者，像貓頭鷹一樣喜歡追求知識和理解。他們擁有優秀的邏輯思維和分析能力，但有時也傾向於過度分析和與現實脫節。",
+        "",
         外向思考型:
-        "敏銳而富有同理心的灰狼，善於理解他人的需求和情感。他們常常具有崇高的價值觀和使命感，但有時也會因為過於保護他人而忽略自己的需求。",
+        "",
         內向思考型:
-        "敏感而和善的水鹿，具有豐富的情感世界和強烈的內在價值觀。像水鹿一樣，他們追求和平與和諧，但有時也容易感到壓力和情緒波動。",
+        "",
         外向情感型:
-        "有著銳利洞察力和果斷決策能力的老鷹，擅長組織和管理。他們注重效率和結果，但有時也因為過於嚴格和不易妥協而與他人產生衝突。",
+        "",
         內向情感型:
-        "追求刺激和冒險的獵豹，善於適應環境並迅速做出反應。他們勇於冒險並享受現在，但有時也容易變得過於衝動和不顧後果。",
+        "",
     };
   
     // 建立動物名稱與能力值的對應表
@@ -402,6 +408,26 @@
       "內向情感型": "內向感覺型",
     };
   
+
+    // 顯示結果
+  $("#submitBtn").hide();
+  $("#scenarioContainer").hide();
+  var mbtiType = result;
+  var animalName = animalNames[mbtiType];
+  var animalDescription = animalDescriptions[animalName];
+  var animalAbility = animalAbilities[animalName];
+  var imgSrc = "../專題/src/image/" + animalName + ".png";
+
+  var answerHTML = "<h2>你是... </h2>";
+  answerHTML += "<img src='" + imgSrc + "' width=300 height=550 >";
+  
+
+  $("#content").html(answerHTML);
+
+ 
+  
+
+
 // 在按鈕點擊後觸發的事件處理函式
 $("#shareBtn").on("click", function () {
     // 取得測驗結果

@@ -12,6 +12,15 @@ html {
   background-position: center;
 }
 
+/*隱藏滾動條*/
+body::-webkit-scrollbar {
+  display: none;
+}
+html {
+  overflow: -moz-hidden-unscrollable; /*注意！若只打 hidden，chrome 的其它 hidden 會出問題*/
+  height: 100%;
+}
+
 .container {
   display: flex;
   max-width: 400px;
@@ -162,10 +171,10 @@ html {
 button {
   font-family: "Noto Serif TC", serif;
   border: none;
-  font-size: 1.2rem;
+  font-size: 16px;
   line-height: 1.2rem;
   font-weight: bold;
-  padding: 0.8rem 1.2rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   margin-top: 1.5rem;
   color: #332222;
@@ -175,3 +184,4 @@ button {
 button:hover {
   filter: brightness(80%);
 }/*# sourceMappingURL=style.css.map */
+
