@@ -356,66 +356,13 @@
         ISFP: "16"
     };
   
-    // 建立動物名稱與描述的對應表
-    var animalDescriptions = {
-        外向感知者:
-        "",
-        內向感知者:
-        "",
-        外向直覺者:
-        "",
-        內向直覺者:
-        "",
-        外向感覺型:
-        "",
-        內向感覺型:
-        "",
-        外向思考型:
-        "",
-        內向思考型:
-        "",
-        外向情感型:
-        "",
-        內向情感型:
-        "",
-    };
-  
-    // 建立動物名稱與能力值的對應表
-    var animalAbilities = {
-      "外向感知者": [1,2,3,4,5],
-      "內向感知者": [1,2,3,4,5],
-      "外向直覺者": [1,2,3,4,5],
-      "內向直覺者": [1,2,3,4,5],
-      "外向感覺型": [1,2,3,4,5],
-      "內向感覺型": [1,2,3,4,5],
-      "外向思考型": [1,2,3,4,5],
-      "內向思考型": [1,2,3,4,5],
-      "外向情感型": [1,2,3,4,5],
-      "內向情感型": [1,2,3,4,5],
-    };
-  
-    // 建立動物的友好動物列表
-    var animalFriends = {
-      "外向感知者": "外向感覺型",
-      "內向感知者": "內向感覺型",
-      "外向直覺者": "外向情感型",
-      "內向直覺者": "內向情感型",
-      "外向感覺型": "外向情感型",
-      "內向感覺型": "內向情感型",
-      "外向思考型": "外向感知者",
-      "內向思考型": "內向感知者",
-      "外向情感型": "外向感覺型",
-      "內向情感型": "內向感覺型",
-    };
-  
 
     // 顯示結果
   $("#submitBtn").hide();
   $("#scenarioContainer").hide();
   var mbtiType = result;
   var animalName = animalNames[mbtiType];
-  var animalDescription = animalDescriptions[animalName];
-  var animalAbility = animalAbilities[animalName];
+ 
   var imgSrc = "../專題/src/image/" + animalName + ".png";
 
   var answerHTML = "<h2>你是... </h2>";
@@ -431,76 +378,17 @@
 // 在按鈕點擊後觸發的事件處理函式
 $("#shareBtn").on("click", function () {
     // 取得測驗結果
-    var result = animalDescription; // 假設 animalDescription 已定義
+    
     var answerName = $("#name").val(); // 取得名字，假設有一個 id 為 name 的輸入框
+    
 
-    // 建立新的 Canvas 元素
-    var canvas = document.createElement("canvas");
-    canvas.width = 720;
-    canvas.height = 1280;
-    var ctx = canvas.getContext("2d");
-
-    // 建立背景圖片物件
-    var backgroundImage = new Image();
-    backgroundImage.src = "/src/image/canvas_background.jpg";
+   
 
     // 背景圖片載入完成後繪製
     backgroundImage.onload = function () {
         // 繪製背景圖片
-        ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height);
-
-        // 設定標題文字樣式
-        ctx.font = "bold 55px Arial";
-        ctx.fillStyle = "white";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.shadowBlur = 5;
-        ctx.shadowColor = "rgba(0,0,0,0.5)";
-
-        // 繪製標題文字
-        var titleText = answerName + "是...";
-        ctx.fillText(titleText, canvas.width / 2, 130);
-
-        // 設定測驗結果文字的樣式和位置
-        ctx.font = "32px Arial";
-        ctx.fillStyle = "white";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.shadowBlur = 5;
-        ctx.shadowColor = "rgba(0,0,0,0.5)";
-
-        // 設定測驗結果文字的最大寬度和行高
-        var maxWidth = canvas.width - 40; // 距離邊界的空白距離
-        var lineHeight = 42;
-
-        // 定義測驗結果文字的起始位置
-        var startX = canvas.width / 2;
-        var startY = canvas.height - 260;
-
-        // 將測驗結果文字進行換行處理
-        var words = result.split("");
-        var line = "";
-        var lines = [];
-
-        for (var i = 0; i < words.length; i++) {
-            var testLine = line + words[i] + "";
-            var metrics = ctx.measureText(testLine);
-            var testWidth = metrics.width;
-
-            if (testWidth > maxWidth && i > 0) {
-                lines.push(line.trim());
-                line = words[i] + "";
-            } else {
-                line = testLine;
-            }
-        }
-
-        lines.push(line.trim());
-
-        // 繪製測驗結果文字（換行處理後）
-        for (var j = 0; j < lines.length; j++) {
-            ctx.fillText(lines[j], startX, startY + j * lineHeight);
-        }
+        ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height)
+      
 
         // 建立圖片 URL
         var image = canvas.toDataURL("image/png");
