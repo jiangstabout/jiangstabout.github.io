@@ -26,7 +26,8 @@
     };
     s.parentNode.insertBefore(tk, s);
   })(document);
-  
+    // 顯示結果
+    $("#shareBtn").hide();
   var scenarios = [
     {
       description:
@@ -93,10 +94,11 @@
         options: [
           {
             value: "N",value: "F",
-            label: "由於猶豫不知道要握哪隻魷魚手，所以拒絕了祂。"
+            label: 
+            "由於猶豫不知道要握哪隻魷魚手，所以拒絕了祂。"
           },
           {
-            value: "S",value: "F",
+            value: "S",value: "T",
             label:
               "毫不猶豫的就上台舞力全開，把魷魚大神電成魷魚乾。"
           }
@@ -138,10 +140,11 @@
         options: [
           {
             value: "N",value: "T",
-            label: "先站得遠遠的打電話報警，並思考其他解決辦法，等待警方。"
+            label:
+             "先站得遠遠的打電話報警，並思考其他解決辦法，等待警方。"
           },
           {
-            value: "S",value: "T",
+            value: "S",value: "F",
             label:
               "上前拉開兩方，了解對方的想法並解開誤會。"
           }
@@ -360,6 +363,8 @@
     // 顯示結果
   $("#submitBtn").hide();
   $("#scenarioContainer").hide();
+    // 顯示結果
+    $("#shareBtn").show();
   var mbtiType = result;
   var animalName = animalNames[mbtiType];
  

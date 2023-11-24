@@ -38,10 +38,10 @@
   <div class="container">
     <div id="cover">
       <h1>白龍庵如性慈敬堂</h1>
-      <h2>就將</h2>
-      <p>當你步入廟門，一股濃厚的線香味環繞四周，樹影婆娑下的廟宇顯得格外寧靜祥和。</p>
-      <p>這裡人潮熙攘，熱鬧非凡，彷彿整個社區都在這個特別的日子裡聚集在此。</p>
-      <p>去看看發生了什麼?</p>
+      <img src="./src/image/就將字體.png" alt="" width="200" height="150">
+      <p style="font-size: 14px;">當你步入廟門，一股濃厚的線香味環繞四周，樹影婆娑下的廟宇顯得格外寧靜祥和。</p>
+      <p style="font-size: 14px;">這裡人潮熙攘，熱鬧非凡，彷彿整個社區都在這個特別的日子裡聚集在此。</p>
+      <p style="font-size: 14px;">去看看發生了什麼?</p>
       <button id="goIntoForest">前往廟宇</button>
     </div>
     <div id="askName">
@@ -54,22 +54,17 @@
       <button id="nextBtn">繼續向前</button>
       <button id="waitBtn">前方好像有個黑影</button>
     </div>
-    <div id="wait" name="wait">
+    <div id="wait" name="wait" style="margin-left: 28%;">
       <p>定睛一看，原來那是...</p>
       <button id="submitBtn">看看是誰</button>
     </div>
     <div id="result">
       <div id="content"></div>
-      <div class="chartandfriedns">
-       
-        <div class="friend">
-         
-          <div id="friend"></div>
-        </div>
-      </div>
+    </div>
+    </div>
       <!-- <canvas id="radarChart" width="250" height="250"></canvas> -->
 
-      <button onclick="redirectToInstagram()" id="shareBtn">分享結果</button>
+      <button id="shareBtn" onclick="redirectToInstagram()" style="margin-left: 45%;">分享結果</button>
       <script>
         // JavaScript 函數，用於導向到 Instagram 的網址
         function redirectToInstagram() {

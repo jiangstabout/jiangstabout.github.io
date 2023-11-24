@@ -20,7 +20,14 @@ html {
   overflow: -moz-hidden-unscrollable; /*注意！若只打 hidden，chrome 的其它 hidden 會出問題*/
   height: 100%;
 }
-
+p,label{
+  font-family: "Noto Serif TC",serif ;
+  font-weight: 300;
+  font-size: 18px;
+}
+label{
+  font-size: 16px;
+}
 .container {
   display: flex;
   max-width: 400px;
@@ -29,8 +36,7 @@ html {
   flex-wrap: wrap;
   text-align: center;
   align-content: center;
-  -webkit-backdrop-filter: blur(4px) brightness(80%);
-  backdrop-filter: blur(4px) brightness(80%);
+  
 }
 .container #cover {
   margin-bottom: 1rem;
@@ -75,47 +81,24 @@ html {
   display: none;
 }
 .container #test form input[type=radio]:checked + label {
-  -webkit-filter: brightness(120%);
-  filter: brightness(120%);
+ background: #690ebe;
 }
 .container #test form label {
   width: 100%;
   cursor: pointer;
   position: relative;
-  background: #523721;
+  background: #be0e0e;
   margin: 5px;
   padding: 15px 25px;
   color: white;
+  border-radius: 5%;
 }
 .container #test form label:hover {
-  -webkit-filter: brightness(120%);
-  filter: brightness(120%);
+  -webkit-filter: brightness(150%);
+  filter: brightness(150%);
 }
-.container #test form label::after, .container #test form label::before {
-  content: "✕";
-  display: block;
-  width: 12px;
-  height: 12px;
-  border-radius: 50px;
-  background: #ffffff;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  overflow: hidden;
-  line-height: 12px;
-  margin: 0;
-  padding: 0;
-  font-size: 12px;
-  color: #ffffff;
-  font-weight: bold;
-  text-align: center;
-}
-.container #test form label::after {
-  right: 10px;
-}
-.container #test form label::before {
-  left: 10px;
-}
+
+
 .container #wait,
 .container #result,
 .container #askName {
@@ -134,7 +117,7 @@ html {
 .container #askName h2 {
   margin: 0.3rem 5px 1.2rem;
   color: #ffffff;
-  font-family: "kaisei-tokumin", "source-han-serif-tc", sans-serif;
+  font-family: "Noto Serif TC", serif;
   font-size: 1.4rem;
 }
 .container #wait input[type=text],
@@ -182,6 +165,7 @@ button {
   background-size: 37.43px 27.19px;
 }
 button:hover {
-  filter: brightness(80%);
-}/*# sourceMappingURL=style.css.map */
+  filter: brightness(150%);
+}
+
 
