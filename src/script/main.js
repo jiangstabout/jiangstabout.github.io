@@ -342,21 +342,21 @@
     // 建立 MBTI 類型與動物名稱的對應表
     var animalNames = {
         ENTJ: "01",
-        ENTP: "02",
-        ENFJ: "03",
-        ENFP: "04",
-        INTJ: "05",
-        INTP: "06",
-        INFJ: "07",
-        INFP: "08",
-        ESTJ: "09",
-        ESTP: "10",
-        ESFJ: "11",
-        ESFP: "12",
-        ISTJ: "13",
-        ISTP: "14",
-        ISFJ: "15",
-        ISFP: "16"
+        ENTP: "01",
+        ENFJ: "01",
+        ENFP: "01",
+        INTJ: "01",
+        INTP: "01",
+        INFJ: "01",
+        INFP: "01",
+        ESTJ: "01",
+        ESTP: "01",
+        ESFJ: "01",
+        ESFP: "01",
+        ISTJ: "01",
+        ISTP: "01",
+        ISFJ: "01",
+        ISFP: "01"
     };
   
 
@@ -368,7 +368,7 @@
   var mbtiType = result;
   var animalName = animalNames[mbtiType];
  
-  var imgSrc = "../專題/src/image/" + animalName + ".png";
+  var imgSrc = "../專題/src/image/" + animalName + ".jpg";
 
   var answerHTML = "<h2>你是... </h2>";
   answerHTML += "<img src='" + imgSrc + "' width=300 height=550 >";
