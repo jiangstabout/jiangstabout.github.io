@@ -341,22 +341,22 @@
   
     // 建立 MBTI 類型與動物名稱的對應表
     var animalNames = {
-        ENTJ: "01",
-        ENTP: "01",
-        ENFJ: "01",
-        ENFP: "01",
-        INTJ: "01",
-        INTP: "01",
-        INFJ: "01",
-        INFP: "01",
-        ESTJ: "01",
-        ESTP: "01",
-        ESFJ: "01",
-        ESFP: "01",
-        ISTJ: "01",
-        ISTP: "01",
-        ISFJ: "01",
-        ISFP: "01"
+        ENTJ: "秋",
+        ENTP: "范",
+        ENFJ: "夏",
+        ENFP: "夏",
+        INTJ: "秋",
+        INTP: "甘將軍",
+        INFJ: "謝",
+        INFP: "謝",
+        ESTJ: "文",
+        ESTP: "冬",
+        ESFJ: "春",
+        ESFP: "柳",
+        ISTJ: "文",
+        ISTP: "武",
+        ISFJ: "春",
+        ISFP: "柳"
     };
   
 
