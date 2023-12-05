@@ -370,8 +370,8 @@
  
   var imgSrc = "../專題/src/image/" + animalName + ".jpg";
 
-  var answerHTML = "<p style=font-size:18px>保存圖片分享到IG限動並@jiangst_about_office，可以在專題展期間找我們領取小禮物喔!</p>";
-  answerHTML += "<img src='" + imgSrc + "' width=300 height=550 style=marging-bottom:3%>";
+  var answerHTML = "<p style=font-size:18px;margin-top:40%>保存圖片分享到IG限動並@jiangst_about_office，可以在專題展期間找我們領取小禮物喔!</p>";
+  answerHTML += "<img src='" + imgSrc + "' width=300 height=550 style=margin-bottom:3%>";
   
 
   $("#content").html(answerHTML);
