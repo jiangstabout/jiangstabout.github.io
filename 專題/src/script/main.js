@@ -341,22 +341,22 @@
   
     // 建立 MBTI 類型與動物名稱的對應表
     var animalNames = {
-        ENTJ: "01",
-        ENTP: "01",
-        ENFJ: "01",
-        ENFP: "01",
-        INTJ: "01",
-        INTP: "01",
-        INFJ: "01",
-        INFP: "01",
-        ESTJ: "01",
-        ESTP: "01",
-        ESFJ: "01",
-        ESFP: "01",
-        ISTJ: "01",
-        ISTP: "01",
-        ISFJ: "01",
-        ISFP: "01"
+        ENTJ: "秋",
+        ENTP: "范",
+        ENFJ: "夏",
+        ENFP: "夏",
+        INTJ: "秋",
+        INTP: "甘",
+        INFJ: "謝",
+        INFP: "謝",
+        ESTJ: "文",
+        ESTP: "冬",
+        ESFJ: "春",
+        ESFP: "柳",
+        ISTJ: "文",
+        ISTP: "武",
+        ISFJ: "春",
+        ISFP: "柳"
     };
   
 
@@ -371,7 +371,7 @@
   var imgSrc = "../專題/src/image/" + animalName + ".jpg";
 
   var answerHTML = "<h2>你是... </h2>";
-  answerHTML += "<img src='" + imgSrc + "' width=300 height=550 >";
+  answerHTML += "<img src='" + imgSrc + "' width=300 height=550 style=marging-bottom:3%>";
   
 
   $("#content").html(answerHTML);
@@ -380,33 +380,7 @@
   
 
 
-// 在按鈕點擊後觸發的事件處理函式
-$("#shareBtn").on("click", function () {
-    // 取得測驗結果
-    
-    var answerName = $("#name").val(); // 取得名字，假設有一個 id 為 name 的輸入框
-    
 
-   
-
-    // 背景圖片載入完成後繪製
-    backgroundImage.onload = function () {
-        // 繪製背景圖片
-        ctx.drawImage(backgroundImage, 0, 0, canvas.width, canvas.height)
-      
-
-        // 建立圖片 URL
-        var image = canvas.toDataURL("image/png");
-
-        // 開啟新視窗
-        var newWindow = window.open("", "_blank");
-
-        // 在新視窗中插入圖片元素
-        newWindow.document.open();
-        newWindow.document.write('<p style="text-align:center">長按圖片保存分享</p><img src="' + image + '" alt="測驗結果" style="height: 100%;text-align:center;margin: 0 auto;">');
-        newWindow.document.close();
-    };
-});
 
   
   }
