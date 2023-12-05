@@ -370,7 +370,7 @@
  
   var imgSrc = "../專題/src/image/" + animalName + ".jpg";
 
-  var answerHTML = "<h2>你是... </h2>";
+  var answerHTML = "<p style=font-size:18px>保存圖片分享到IG限動並@jiangst_about_office，可以在專題展期間找我們領取小禮物喔!</p>";
   answerHTML += "<img src='" + imgSrc + "' width=300 height=550 style=marging-bottom:3%>";
   
 
